@@ -1,9 +1,9 @@
 function computerSelect(){
-    let randomnumber = Math.floor(Math.random() * 3) + 1;
-    if(randomnumber === 1){
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
+    if(randomNumber === 1){
         return 'Rock';
     }
-    else if(randomnumber === 2){
+    else if(randomNumber === 2){
         return 'Paper';
     }
     else{
