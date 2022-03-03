@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: linear-gradient(to right,#c33764, #1d2671);
+    height: 100vh;
+    font-family: "Fira Sans";
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.startContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    gap: 32px;
+    padding: 0px 30px;
+}
+.header{
+    font-size: 42px;
+}
+.gameInfo{
+    font-size: 18px;
+    line-height: 28px;
+}
+.startBtn{
+    font-family: Shizuru;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 10px 30px;
+    font-size: 24px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.startBtn:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 8px 0px rgba(255, 255, 255, 0.39);
+}
+.gameContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    gap: 32px;
+    padding: 0px 30px;
+    display: none;
+}
+.roundNoHeader{
+    font-size: 28px;
+}
+.choicesSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.choices img{
+    height: auto;
+    max-width: 90px;
+    margin: 0px 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+.choices img:hover{
+    transform:scale(1.1);
+}
+.pickedChoice{
+    display: flex;
+    gap: 284px;
+    justify-content: center;
+    align-items: center;
+}
+.playerSelection, .computerSelection{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.computerSelection img, .playerSelection img{
+    height: auto;
+    max-width: 90px;
+}
+.playerchoice, .computerchoice{
+    font-weight: bold;
+}
+.scoreSection{
+    font-size: 18px;
+}
+.result{
+    padding: 20px 0px;
+}
+.playAgain{
+    display: none;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.winner{
+    font-size: 32px;
+}
+
+.playAgainbtn{
+    font-family: Shizuru;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 10px 30px;
+    font-size: 24px;
+    transition: 0.3s;
+    font-weight: bold;
+    word-spacing: -15px;
+}
+.playAgainbtn:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 8px 0px rgba(255, 255, 255, 0.39);
+}
+
+/* Media Queries for responsiveness on different screen sizes */
+
+@media screen and (min-width: 2560px) {
+    .startContainer{
+        gap: 48px;
+    }
+    .header {
+      font-size: 86px;
+    }
+    .gameInfo{
+        font-size: 38px;
+        line-height: 48px;
+    }
+    .startBtn{
+        font-size: 42px;
+        padding: 20px 60px;
+    }
+    .gameContainer{
+        gap: 84px;
+    }
+    .roundNoHeader{
+        font-size: 42px;
+    }
+    .choicesSection h2{
+        font-size: 32px;
+    }
+    .choices img{
+        max-width: 160px;
+        margin: 0px 40px;
+    }
+    .pickedChoice{
+        gap: 428px;
+    }
+    .pickedChoice p{
+        font-size: 32px;
+    }
+    .computerSelection img, .playerSelection img{
+        max-width: 160px;
+    }
+    .result{
+        font-size: 32px;
+    }
+    .scoreSection p{
+        font-size: 32px;
+    }
+  }

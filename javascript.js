@@ -11,10 +11,20 @@ function computerSelect(){
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
+function playerSelect(target){
+    if(target.classList.contains('rock')){
+        return 'Rock';
+    }
+    else if(target.classList.contains('paper')){
+        return 'Paper';
+    }
+    else if(target.classList.contains('scissors')){
+        return 'Scissor';
+    }
+}
 
 function playRound(playerSelection, computerSelection){
+    roundNo++;
     if((playerSelection === 'rock' || playerSelection === 'Rock' || playerSelection === 'ROCK') &&
      computerSelection === 'Paper'){
         computerScore++;
@@ -59,14 +69,92 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(){
-    const numberOfGames = prompt('How many rounds you want to play?');
-    for (let i = 0; i < numberOfGames; i++) {
-        let playerSelection = prompt('Enter Rock, Paper or Scissor: ');
-        let computerSelection = computerSelect();
-        alert('Player Chose: ' + playerSelection + '\n' + 'Computer Chose: ' + computerSelection + '\n'
-        + playRound(playerSelection, computerSelection) + '\n\n' + 'Your Score: ' + playerScore + '    Computer Score: ' + computerScore);
+function updatePlayerChoice(playerSelection){
+    if(playerSelection === 'Rock'){
+        document.querySelector('.playerPicked').src = 'images/rock.jpg';
+    }
+    else if(playerSelection === 'Paper'){
+        document.querySelector('.playerPicked').src = 'images/paper.jpg';
+    }
+    else{
+        document.querySelector('.playerPicked').src = 'images/scissors.jpg';
     }
 }
 
-game();
+function updateComputerChoice(computerSelection){
+    if(computerSelection === 'Rock'){
+        document.querySelector('.computerPicked').src = 'images/rock.jpg';
+    }
+    else if(computerSelection === 'Paper'){
+        document.querySelector('.computerPicked').src = 'images/paper.jpg';
+    }
+    else{
+        document.querySelector('.computerPicked').src = 'images/scissors.jpg';
+    }
+}
+
+function resetGame(){
+    roundNo = 1;
+    playerScore = 0;
+    computerScore = 0;
+    gameRoundNo.textContent = `Round ${roundNo}`;
+    playerScoreText.textContent = `Your Score: ${playerScore}`;
+    computerScoreText.textContent = `Computer Score: ${computerScore}`;
+    result.textContent = '';
+    document.querySelector('.playerPicked').src = 'images/questionMark.png';
+    document.querySelector('.computerPicked').src = 'images/questionMark.png';
+}
+
+function playAgain(){
+    document.querySelector('.gameContainer').style.display = 'none';
+    document.querySelector('.playAgain').style.display = 'flex';
+    if(playerScore === 5){
+        document.querySelector('.winner').textContent = 'You Won The Game';
+    }
+    else if(computerScore === 5){
+        document.querySelector('.winner').textContent = 'Computer Won The Game';
+    }
+    resetGame();
+    playAgainbtn.addEventListener('click',Start);
+}
+
+function game(e){
+    if(playerScore != 5 && computerScore != 5){
+        const playerSelection = playerSelect(e.target);
+        const computerSelection = computerSelect();
+        updatePlayerChoice(playerSelection);
+        updateComputerChoice(computerSelection);
+        gameRoundNo.textContent = `Round ${roundNo}`;
+        result.textContent = `${playRound(playerSelection,computerSelection)}`;
+        playerScoreText.textContent = `Your Score: ${playerScore}`;
+        computerScoreText.textContent = `Computer Score: ${computerScore}`;
+    }
+    if(playerScore === 5 || computerScore === 5){
+        setTimeout(playAgain,1000);
+    }
+}
+
+function Start(){
+    document.querySelector('.startContainer').style.display = 'none';
+    document.querySelector('.gameContainer').style.display = 'flex';
+    document.querySelector('.playAgain').style.display = 'none';
+    rock.addEventListener('click',game);
+    paper.addEventListener('click',game);
+    scissors.addEventListener('click',game);
+}
+
+let roundNo = 1;
+let playerScore = 0;
+let computerScore = 0;
+
+const gameRoundNo = document.querySelector('.roundNo');
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const playerScoreText = document.querySelector('.playerScore');
+const computerScoreText = document.querySelector('.computerScore');
+const result = document.querySelector('.result');
+const playAgainbtn = document.querySelector('.playAgainbtn');
+
+const startBtn = document.querySelector('#startBtn');
+startBtn.addEventListener('click',Start);

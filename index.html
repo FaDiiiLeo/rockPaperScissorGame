@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&family=Shizuru&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/51b0df895f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissor</title>
 </head>
 <body>
+    <div class="startContainer">
+        <h1 class="header">Rock Paper Scissors - Play Against Computer</h1>
+        <p class="gameInfo">A classic game - Rock, Paper, Scissors! Choose one of the three choices - and see if you can beat the computer.<br>
+            Will you win? The chance is random!<br><em>- Win 5 Rounds First To Win The Game</em></p>
+        <button class="startBtn" id="startBtn">Start</button>
+    </div>
+    <div class="gameContainer">
+        <div class="roundNoHeader">
+            <h1 class="roundNo">Round 1</h1>
+        </div>
+        <div class="choicesSection">
+            <h2>Take Your Pick</h2>
+            <div class="choices">
+                <img class="rock" src="images/rock.jpg" alt="Rock">
+                <img class="paper" src="images/paper.jpg" alt="Paper">
+                <img class="scissors" src="images/scissors.jpg" alt="Scissors">
+            </div>
+        </div>
+        <div class="pickedChoice">
+            <div class="playerSelection">
+                <p>You Picked</p>
+                <img class="playerPicked" src="images/questionMark.png" alt="Question Mark">
+            </div>
+            <div class="computerSelection">
+                <p>Computer Picked</p>
+                <img class="computerPicked" src="images/questionMark.png" alt="Question Mark">
+            </div>
+        </div>
+        <div class="scoreSection">
+            <h4 class="result"></h4>
+            <p class="playerScore">Your Score: 0</p>
+            <p class="computerScore">Computer Score: 0</p>
+        </div>
+    </div>
+    <div class="playAgain">
+        <h2 class="winner">af</h2>
+        <button class="playAgainbtn">Play Again</button>
+    </div>
     <script src="javascript.js"></script>
 </body>
 </html>
