@@ -2,9 +2,11 @@
     padding: 0;
     margin: 0;
 }
+html, body{
+    height: 100%;
+}
 body{
     background-image: linear-gradient(to right,#c33764, #1d2671);
-    height: 100vh;
     font-family: "Fira Sans";
     color: white;
     text-align: center;
@@ -27,7 +29,7 @@ body{
     line-height: 28px;
 }
 .startBtn{
-    font-family: Shizuru;
+    font-family: cursive;
     background-color: transparent;
     border: 2px solid white;
     color: white;
@@ -119,7 +121,7 @@ body{
 }
 
 .playAgainbtn{
-    font-family: Shizuru;
+    font-family: cursive;
     background-color: transparent;
     border: 2px solid white;
     color: white;
@@ -129,7 +131,6 @@ body{
     font-size: 24px;
     transition: 0.3s;
     font-weight: bold;
-    word-spacing: -15px;
 }
 .playAgainbtn:hover{
     transform: scale(1.1);
@@ -176,9 +177,115 @@ body{
         max-width: 160px;
     }
     .result{
-        font-size: 32px;
+        font-size: 42px;
     }
     .scoreSection p{
         font-size: 32px;
     }
-  }
+    .winner{
+        font-size: 72px;
+    }
+    .playAgainbtn{
+        font-size: 42px;
+        padding: 20px 60px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .gameContainer{
+        gap: 18px;
+    }   
+}
+
+@media screen and (max-width: 768px){
+    .gameContainer{
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .header{
+        font-size: 32px;
+    }
+    .gameInfo{
+        font-size: 14px;
+    }
+    .startBtn{
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+    .gameContainer{
+        gap: 24px;
+    }
+    .roundNoHeader{
+        font-size: 22px;
+    }
+    .choicesSection h2{
+        font-size: 18px;
+    }
+    .choices img{
+        max-width: 60px;
+        margin: 0px 20px;
+    }
+    .pickedChoice{
+        gap: 140px;
+    }
+    .computerSelection img, .playerSelection img{
+        height: auto;
+        max-width: 60px;
+    }
+    .scoreSection h4{
+        font-size: 18px;
+    }
+    .scoreSection p{
+        font-size: 16px;
+    }
+    .winner{
+        font-size: 28px;
+    }
+    .playAgainbtn{
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .choices img{
+        margin: 0px 10px;
+    }
+    .pickedChoice{
+        gap: 80px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .roundNoHeader{
+        font-size: 18px;
+    }
+    .choicesSection h2{
+        font-size: 16px;
+    }
+    .choices img{
+        margin: 0px 10px;
+    }
+    .pickedChoice{
+        gap: 50px;
+    }
+    .computerSelection img, .playerSelection img{
+        height: auto;
+        max-width: 50px;
+    }
+    .scoreSection h4{
+        font-size: 18px;
+    }
+    .scoreSection p{
+        font-size: 14px;
+    }
+    .winner{
+        font-size: 24px;
+    }
+    .playAgainbtn{
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
